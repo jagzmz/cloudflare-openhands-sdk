@@ -237,24 +237,25 @@ export function attachOpenhandsRoutes<Env extends OpenhandsEnv = OpenhandsEnv>(
     env: Env
   ) => Response | Promise<Response>,
   options: OpenhandsHandlerOptions = {}
-): (
-  request: Request,
-  env: Env
-) => Promise<Response> {
+): {
+  fetch: (request: Request, env: Env) => Promise<Response>;
+} {
   const openhandsHandler = createOpenhandsHandler<Env>(options);
 
-  return async (
-    request: Request,
-    env: Env
-  ): Promise<Response> => {
-    // First, try OpenHands handler
-    const openhandsResponse = await openhandsHandler(request, env);
-    if (openhandsResponse !== null) {
-      return openhandsResponse;
-    }
+  return {
+    fetch: async (
+      request: Request,
+      env: Env
+    ): Promise<Response> => {
+      // First, try OpenHands handler
+      const openhandsResponse = await openhandsHandler(request, env);
+      if (openhandsResponse !== null) {
+        return openhandsResponse;
+      }
 
-    // Fall through to user's handler
-    return fetchHandler(request, env);
+      // Fall through to user's handler
+      return fetchHandler(request, env);
+    },
   };
 }
 
