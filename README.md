@@ -2,6 +2,8 @@
 
 SDK for integrating OpenHands agent-server with Cloudflare Workers Sandbox.
 
+![Cloudflare OpenHands](assets/cf-openhands.jpeg)
+
 ## Installation
 
 ```bash
