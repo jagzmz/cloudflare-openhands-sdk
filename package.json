@@ -27,7 +27,8 @@
   "files": [
     "dist",
     "Dockerfile",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "bun run build.ts",
@@ -47,7 +48,7 @@
     "sandbox",
     "agent-server"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/jagzmz/cloudflare-openhands-sdk.git"
