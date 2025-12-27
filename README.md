@@ -17,7 +17,7 @@ bun add cloudflare-openhands-sdk
 ## Prerequisites
 
 - `@cloudflare/sandbox` (peer dependency) - Install in your Worker project
-- Cloudflare Workers account with Sandbox support
+- Cloudflare Workers Paid account
 - Custom domain (required for preview URLs)
 
 ## Quick Start

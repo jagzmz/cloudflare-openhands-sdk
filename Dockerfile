@@ -14,6 +14,5 @@ RUN git clone https://github.com/OpenHands/software-agent-sdk.git && \
     cd software-agent-sdk && \
     make build
 
-# Required during local development to access exposed ports
-EXPOSE 8080
-
+# Allows access to exposed ports from the default OpenHands port during local development
+EXPOSE 8001
