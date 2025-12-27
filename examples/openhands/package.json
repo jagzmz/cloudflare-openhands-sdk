@@ -15,7 +15,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "cloudflare-openhands-sdk": "^0.2.1"
+    "cloudflare-openhands-sdk": "^0.3.0"
   },
   "devDependencies": {
     "@cloudflare/sandbox": "^0.6.7",
