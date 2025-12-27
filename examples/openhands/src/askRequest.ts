@@ -8,7 +8,6 @@ interface AgentConfig {
   model: string;
   apiKey: string;
   temperature: number;
-  tools: Array<{ name: string }>;
   workingDir: string;
 }
 
@@ -25,12 +24,7 @@ export class AskRequestHandler {
     this.agentConfig = {
       model: "anthropic/claude-sonnet-4-5-20250929",
       apiKey: env.ANTHROPIC_API_KEY,
-      temperature: 0,
-      tools: [
-        { name: "terminal" },
-        { name: "file_editor" },
-        { name: "task_tracker" },
-      ],
+      temperature: 1,
       workingDir: "workspace/project",
     };
   }
@@ -73,7 +67,6 @@ export class AskRequestHandler {
             temperature: this.agentConfig.temperature,
             usage_id: "openhands-sandbox",
           },
-          tools: this.agentConfig.tools,
           system_prompt_kwargs: {
             llm_security_analyzer: true,
           },
@@ -105,7 +98,6 @@ export class AskRequestHandler {
     });
 
     const response = await proxyToOpenhands(request, this.sandbox, this.server);
-    console.log("Response", response);
 
     if (!response.ok) {
       throw new Error("Failed to send message");
