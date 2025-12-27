@@ -11,7 +11,9 @@ const SANDBOX_NAME = "openhands";
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    const sandbox = getSandbox(env.Sandbox, SANDBOX_NAME);
+    const sandbox = getSandbox(env.Sandbox, SANDBOX_NAME, {
+      sleepAfter: "10m",
+    });
     const server = await createOpenhandsServer(sandbox, {
       sandboxName: SANDBOX_NAME,
     });
