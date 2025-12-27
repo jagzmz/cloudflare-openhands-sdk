@@ -22,38 +22,17 @@ bun add cloudflare-openhands-sdk
 
 ## Quick Start
 
-### 1. Configure Wrangler
+The fastest way to get started is using our example template:
 
-Add the Dockerfile to your `wrangler.jsonc`:
-
-```jsonc
-{
-  "containers": [
-    {
-      "class_name": "Sandbox",
-      "image": "./node_modules/cloudflare-openhands-sdk/Dockerfile",
-      "instance_type": "basic",
-      "max_instances": 1
-    }
-  ],
-  "durable_objects": {
-    "bindings": [
-      {
-        "class_name": "Sandbox",
-        "name": "Sandbox"
-      }
-    ]
-  },
-  "routes": [
-    {
-      "pattern": "*.yourdomain.com/*",
-      "zone_name": "yourdomain.com"
-    }
-  ]
-}
+```bash
+npm create cloudflare@latest -- openhands-example --template=jagzmz/cloudflare-openhands-sdk/examples/openhands
+# or
+pnpm create cloudflare@latest -- openhands-example --template=jagzmz/cloudflare-openhands-sdk/examples/openhands
 ```
 
-### 2. Use the SDK in Your Worker
+For detailed setup instructions, deployment guide, and usage examples, see the [example README](examples/openhands/README.md).
+
+## Using the SDK in Your Worker
 
 ```typescript
 import { attachOpenhandsRoutes } from 'cloudflare-openhands-sdk/routes';
@@ -113,10 +92,7 @@ The package includes a pre-configured Dockerfile that:
 - Clones and builds the OpenHands software-agent-sdk
 - Sets up the agent-server environment
 
-Reference it in your `wrangler.jsonc`:
-```jsonc
-"image": "./node_modules/cloudflare-openhands-sdk/Dockerfile"
-```
+For a complete Wrangler configuration example, see the [example project](examples/openhands/).
 
 ## Configuration Options
 
@@ -136,3 +112,7 @@ interface OpenhandsOptions {
 Apache 2.0
 
 This project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+This project was inspired by the [Cloudflare Sandbox SDK opencode example](https://github.com/cloudflare/sandbox-sdk/blob/main/packages/sandbox/src/opencode/).
