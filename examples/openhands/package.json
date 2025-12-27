@@ -1,0 +1,26 @@
+{
+  "name": "sandbox-openhands-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "types": "wrangler types",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cloudflare-openhands-sdk": "^0.2.1"
+  },
+  "devDependencies": {
+    "@cloudflare/sandbox": "^0.6.7",
+    "@types/node": "^24.10.4",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.56.0"
+  }
+}
