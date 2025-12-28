@@ -26,8 +26,6 @@ The fastest way to get started is using our example template:
 
 ```bash
 npm create cloudflare@latest -- openhands-example --template=jagzmz/cloudflare-openhands-sdk/examples/openhands
-# or
-pnpm create cloudflare@latest -- openhands-example --template=jagzmz/cloudflare-openhands-sdk/examples/openhands
 ```
 
 For detailed setup instructions, deployment guide, and usage examples, see the [example README](examples/openhands/README.md).
