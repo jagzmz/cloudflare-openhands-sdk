@@ -54,9 +54,9 @@
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
 	 */
-	"vars": {
-		"ANTHROPIC_API_KEY": "@ANTHROPIC_API_KEY"
-	}
+	// "vars": {
+	// 	"ANTHROPIC_API_KEY": "@ANTHROPIC_API_KEY"
+	// }
 	/**
 	 * Static Assets
 	 * https://developers.cloudflare.com/workers/static-assets/binding/
